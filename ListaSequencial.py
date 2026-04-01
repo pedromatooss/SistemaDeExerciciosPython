@@ -26,14 +26,40 @@ def executar():
             print(f"Média: {(n1+n2+n3+n4)/4}")
 
         case 4:
-            print("conversor de Metros----------")
+            print("Conversor de Metros----------")
             metros = int(input("Metros: "))
             print(f"Em cm: {metros * 100}")
 
         case 5:
-            print("calulo de Raio---------------")
+            print("Calulo de Raio---------------")
             raio = int(input("Raio: "))
             print(f"Área: {3.14 * raio**2}")
+        
+        case 6:
+            print("Area do Quadrado-------------")
+            lado = int(input("Lado: "))
+            print(f"Área: {lado * lado}")
+
+        case 7:
+            print("Calculo de Salario------------")
+            horas = int(input("Horas trabalhadas no Mês: "))
+            ganho = int(input("Salario por hora: "))
+            print(f"Salario do mês {horas * ganho}")
+
+        case 8: 
+            print("Temperatura em Celsius---------")
+
+        case 9:
+            print("Temperatura em Fahrenheit------")
+
+        case 10: 
+            print("Calculos com 3 números---------")
+            x = int(input(""))
+            y = int(input(""))
+            z = int(input(""))
+            print(f"O produto do dobro do primeiro com metade do segundo {(x * 2) * (y / 2)}")
+            print(f"A soma do triplo do primeiro com o Terceiro{(x * 3) + z}")
+            print(f"O terceiro elevadoao cubo {z ** 3}")
 
         case _:
             print("Opção inválida!")

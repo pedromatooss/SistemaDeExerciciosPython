@@ -16,6 +16,6 @@ def executar():
                 print(f"Maior: {n2}")
             else:
                 print("São iguais")
-
+        
         case _:
             print("Opção inválida!")
