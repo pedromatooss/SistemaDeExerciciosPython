@@ -101,13 +101,19 @@ def executar():
             print(f"Você tá pobre, compra o desse preço: {menorPreco}")
 
         case 10: 
+             
             print("Decrescente-------------------")
             num = []
             for i in range(3): 
                 n = int(input(f"Digite um numero: "))
                 num.append(n)
-
-            #for n in num: 
-              
+            for i in range(len(num)): #vai percorrer o vetor 
+                for j in range(i+1, len(num)): #vai percorrer o vetor mais um a frente de i, para comparar dois valores
+                    if num[i] < num[j]: #operador para o próximo ser maior
+                        aux = num[i] #vai trocar a posição do numero sempre que ele for maior, deixando assim os maiores na frente
+                        num[i] = num[j]
+                        num[j] = aux
+            
+            print("Numeros decrescentes: ", num)
         case _:
             print("Opção inválida!")

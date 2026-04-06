@@ -5,6 +5,7 @@ import Hanoi
 import ListaSequencial
 import ListaDecisao
 import ListaRepeticao
+import ListaTipagem
 
 
 def limpar_tela():
@@ -21,6 +22,7 @@ while True:
     print("2 - ESTRUTURA DECISÃO")
     print("3 - ESTRUTURA REPETIÇÃO")
     print("4 - TORRE DE HANOI RESOLUÇÃO")
+    print("5 - TIPAGEM EM PYTHON")
     print("0 - SAIR")
 
     try:
@@ -52,7 +54,8 @@ while True:
         case 4: 
             x = int(input("Digite o número de pilhas da torre: "))
             Hanoi.executar(x)
-
+        case 5: 
+            ListaTipagem.executar()
         case _:
             print("Opção inválida!")
 
