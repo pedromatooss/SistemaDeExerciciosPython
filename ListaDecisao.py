@@ -115,5 +115,9 @@ def executar():
                         num[j] = aux
             
             print("Numeros decrescentes: ", num)
+
+        case 11: 
+            print("Professor falou")
+            
         case _:
             print("Opção inválida!")

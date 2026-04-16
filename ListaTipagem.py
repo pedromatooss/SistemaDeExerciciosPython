@@ -1,5 +1,6 @@
 import time
 import os
+import streamlit as st
 from typing import TypeVar, Type, Optional, Union
 from utils import pedir_tipado
 
@@ -11,7 +12,7 @@ def limpar_tela():
 #---- EXercicios ---
 
 def ex_hints_basicos():
-    print("=== Type Hints Básicos ===")
+    st.write("=== Type Hints Básicos ===")
     def somar(a: int, b: int) -> int: 
         return a + b
     
@@ -20,10 +21,10 @@ def ex_hints_basicos():
 
     a = pedir_tipado("Número 1: ", int)
     b = pedir_tipado("Número 2: ", int)
-    print(f"Soma: {somar(a, b)}")
-    nome = input("Seu nome: ")
+    st.write(f"Soma: {somar(a, b)}")
+    nome = st.text_input("Seu nome: ")
     idade = pedir_tipado("Sua idade: ", int)
-    print(apresentar(nome, idade))
+    st.write(apresentar(nome, idade))
 
 # --- Quiz --- 
 
@@ -40,27 +41,27 @@ PERGUNTAS_QUIZ = [
 
 
 def quiz_tipagem():
-    print("=== Quiz de Tipagem ===")
-    print("Adivinhe o tipo de cada expressão Python!\n")
+    st.write("=== Quiz de Tipagem ===")
+    st.write("Adivinhe o tipo de cada expressão Python!\n")
     acertos = 0
 
     for i, q in enumerate(PERGUNTAS_QUIZ, 1):
-        print(f"[{i}/{len(PERGUNTAS_QUIZ)}] Qual o tipo de:  {q['expr']}")
-        resposta = input("Seu palpite: ").strip()
+        st.write(f"[{i}/{len(PERGUNTAS_QUIZ)}] Qual o tipo de:  {q['expr']}")
+        resposta = st.text_input("Seu palpite: ").strip()
 
         if resposta.lower() == q["resposta"].lower():
-            print("  Correto!\n")
+            st.write("  Correto!\n")
             acertos += 1
         else:
-            print(f"  Errado. Era '{q['resposta']}' — {q['dica']}\n")
+            st.write(f"  Errado. Era '{q['resposta']}' — {q['dica']}\n")
 
-    print(f"Resultado: {acertos}/{len(PERGUNTAS_QUIZ)} acertos")
+    st.write(f"Resultado: {acertos}/{len(PERGUNTAS_QUIZ)} acertos")
     if acertos == len(PERGUNTAS_QUIZ):
-        print("Perfeito! Você domina os tipos Python!")
+        st.write("Perfeito! Você domina os tipos Python!")
     elif acertos >= len(PERGUNTAS_QUIZ) // 2:
-        print("Bom resultado! Continue praticando.")
+        st.write("Bom resultado! Continue praticando.")
     else:
-        print("Revise os tipos básicos e tente novamente!")
+        st.write("Revise os tipos básicos e tente novamente!")
 
 
 
